@@ -43,3 +43,6 @@ def test_reset_values_raise_type_error(user):
 def test_reset_values_raise_value_error(user):
     with pytest.raises(ValueError):
         user.email = "fakeemail"
+
+
+# test other value/type errors,

@@ -3,6 +3,7 @@ class User:
     def __init__(
         self, name: str, age: int, email: str = None, phone_number: str = None
     ):
+        # Add validation for values
         self.__name = name
         self.__age = age
         self.__email = email
@@ -32,6 +33,7 @@ class User:
 
     @name.setter
     def name(self, name: str):
+        # validation for name? should it be two names?
         if len(name) < 2:
             raise ValueError("Name must be at least two characters long")
         if type(name) != str:
@@ -50,6 +52,7 @@ class User:
 
     @email.setter
     def email(self, email: str):
+        # use regex to validate email
         if "@" not in email:
             raise ValueError("email must include an @ symbole")
         else:
@@ -57,6 +60,7 @@ class User:
 
     @phone_number.setter
     def phone_number(self, phone_number: str):
+        # use regex to validate phone_number
         numbers = "0123456789"
         phone_nums = ""
         for num in phone_number:
